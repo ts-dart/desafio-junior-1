@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -20,7 +21,10 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(to bottom right, #001738, #001330, #00060f);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Garante que o fundo cubra toda a altura da tela */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

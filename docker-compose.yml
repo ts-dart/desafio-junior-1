@@ -1,14 +1,12 @@
-version: '3.8'
-
 services:
   database:
-    image: postgres:15
+    image: postgres:17
     container_name: database
     restart: always
     environment:
-      POSTGRES_USER: meu_usuario
-      POSTGRES_PASSWORD: minha_senha
-      POSTGRES_DB: minha_petshop
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: petshop
     ports:
       - "5432:5432"
     volumes:
@@ -23,11 +21,11 @@ services:
     environment:
       DB_HOST: database
       DB_PORT: 5432
-      DB_USER: meu_usuario
-      DB_PASS: minha_senha
-      DB_NAME: minha_petshop
+      DB_USER: postgres
+      DB_PASS: 12345
+      DB_NAME: petshop
     ports:
-      - "3001:3001"
+      - "1881:1881"
 
   frontend:
     build: ./frontend
@@ -36,7 +34,7 @@ services:
     depends_on:
       - backend
     environment:
-      NEXT_PUBLIC_API_URL: http://backend:3001
+      NEXT_PUBLIC_API_URL: http://backend:1881
     ports:
       - "3000:3000"
 

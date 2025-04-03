@@ -2,7 +2,7 @@ import 'dotenv/config'
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { PetModule } from '../pet/pet.module';
-import { Pet } from '../pet/pet.entity';
+import { Pet } from '../pet/entities/pet.entity';
 
 @Module({
   imports: [
