@@ -29,7 +29,7 @@ Certifique-se de ter o [Docker](https://www.docker.com/) e o [Docker Compose](ht
 
 Frontend (Next.js): http://localhost:3000
 
-Backend (NestJS): http://localhost:1881
+Backend (NestJS): http://localhost:1881/pets
 
 Swagger (Documentação da API): http://localhost:1881/api
 
