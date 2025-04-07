@@ -14,6 +14,8 @@ export class PetController {
   @ApiResponse({ status: 201, description: 'Pet criado com sucesso', type: Pet })
   @ApiResponse({ status: 400, description: 'Requisição mal formada' })
   create(@Body() createPetDto: CreatePetDto) {
+    console.log("chamou aqui")
+    console.log(createPetDto)
     return this.petService.create(createPetDto);
   }
 

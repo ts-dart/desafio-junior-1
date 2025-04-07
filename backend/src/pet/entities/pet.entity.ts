@@ -1,7 +1,7 @@
 import { Column, Model, Table, DataType } from 'sequelize-typescript';
 import { ApiProperty } from '@nestjs/swagger';
 
-@Table
+@Table({ tableName: 'pets' })
 export class Pet extends Model<Pet> {
   @Column({
     type: DataType.STRING,
@@ -14,14 +14,14 @@ export class Pet extends Model<Pet> {
   name: string;
 
   @Column({
-    type: DataType.INTEGER,
+    type: DataType.DATE,
     allowNull: false,
   })
   @ApiProperty({
-    description: 'Idade do pet',
-    example: 5,
+    description: 'Data de nascimento do pet',
+    example: '2020-04-04',
   })
-  age: number;
+  age: Date;
 
   @Column({
     type: DataType.STRING,
@@ -41,7 +41,7 @@ export class Pet extends Model<Pet> {
     description: 'Raça do pet',
     example: 'Labrador',
   })
-  race: string;
+  breed: string;
 
   @Column({
     type: DataType.STRING,

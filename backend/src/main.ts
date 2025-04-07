@@ -5,6 +5,11 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Libera CORS para qualquer origem (⚠️ cuidado em produção)
+  //app.enableCors({ origin: 'https://meusite.com' });
+  app.enableCors();
+
+
   const config = new DocumentBuilder()
     .setTitle('Petshop API')
     .setDescription('API para gerenciamento de pets')
@@ -19,13 +24,3 @@ async function bootstrap() {
 }
 bootstrap();
 
-/*
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 1881, '0.0.0.0');
-}
-bootstrap();
-*/

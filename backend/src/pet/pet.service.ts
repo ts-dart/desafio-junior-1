@@ -15,7 +15,7 @@ export class PetService {
   @ApiResponse({ status: 201, description: 'Pet criado com sucesso', type: Pet })
   @ApiResponse({ status: 400, description: 'Dados inválidos' })
   async create(createPetDto: CreatePetDto): Promise<Pet> {
-    const pet = await this.petModel.create(createPetDto as Pet);
+    const pet = await this.petModel.create(createPetDto as unknown as Pet);
     return pet;
   }
 
@@ -38,7 +38,7 @@ export class PetService {
   async update(id: string, createPetDto: CreatePetDto) {
     const pet = await this.petModel.findOne({ where: { id } });
     if (pet) {
-      return pet.update(createPetDto);
+      return pet.update(createPetDto as unknown as Pet);
     }
     return null;
   }

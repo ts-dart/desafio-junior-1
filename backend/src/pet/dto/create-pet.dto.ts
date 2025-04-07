@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsInt } from 'class-validator';
+import { IsNotEmpty, IsString, IsDateString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreatePetDto {
@@ -11,12 +11,12 @@ export class CreatePetDto {
   name: string;
 
   @IsNotEmpty()
-  @IsInt()
+  @IsDateString()
   @ApiProperty({
-    description: 'Idade do pet',
-    example: 5,
+    description: 'Data de nascimento do pet',
+    example: '2020-04-04',
   })
-  age: number;
+  age: string;
 
   @IsNotEmpty()
   @IsString()
@@ -32,7 +32,7 @@ export class CreatePetDto {
     description: 'Raça do pet',
     example: 'Labrador',
   })
-  race: string;
+  breed: string;
 
   @IsNotEmpty()
   @IsString()
