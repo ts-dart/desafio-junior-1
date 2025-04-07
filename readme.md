@@ -18,7 +18,7 @@ Certifique-se de ter o [Docker](https://www.docker.com/) e o [Docker Compose](ht
 
 1. **Clone o repositório:**
 
-  git clone https://github.com/seu-usuario/nome-do-repositorio.git
+  git clone git@github.com:ts-dart/desafio-junior-1.git
   cd nome-do-repositorio
 
 2. **Inicie os containers:**
